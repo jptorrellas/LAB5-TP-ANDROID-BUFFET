@@ -2,14 +2,14 @@
     <string name="app_name">LAB5-TP-ANDROID-BUFFET</string>
 
     <!-- LOGIN LAYOUT: EN-->
-    <string name="tvTitulo">Login</string>
-    <string name="tvSubTitulo">Welcome to my first aplication\n Buffet-UTN</string>
+    <string name="tvTituloLogin">Login</string>
+    <string name="tvSubTituloLogin">Welcome to my first aplication\n Buffet-UTN</string>
     <string name="tvEmail">Email:</string>
     <string name="etEmail">Enter your email</string>
     <string name="tvClave">Password:</string>
     <string name="etClave">Enter your password</string>
     <string name="chkRecordarme">Remember credentials</string>
-    <string name="btnIngresar">SIGN IN</string>
+    <string name="btnIngresar">LOG IN</string>
     <string name="btnRegistrarme">SIGN UP</string>
 
     <!-- Validaciones-->
@@ -19,5 +19,15 @@
     <string name="emailClaveIncorrecto">Invalid email or password!</string>
 
     <!-- REGISTRO LAYOUT ES: -->
+    <string name="tvTituloRegistro">Sign Up</string>
+    <string name="tvSubTituloRegistro">This is the Sign Up screen.\n Please enter true values.</string>
+    <string name="tvNombre">Name:</string>
+    <string name="etNombre">Enter your name</string>
+    <string name="tvApellido">Surname:</string>
+    <string name="etApellido">Enter your surname</string>
+    <string name="tvDNI">DNI:</string>
+    <string name="etDNI">Enter your DNI</string>
+    <string name="tvReingreseClave">Re-enter:</string>
+    <string name="etReingreseClave">Re-enter your password</string>
 
 </resources>

@@ -18,6 +18,7 @@ public class Usuario {
     public String clave;
 
     public static List<Usuario> listaUsuarios;
+    public static Usuario usuarioActual;
 
     /*
     * Constructor

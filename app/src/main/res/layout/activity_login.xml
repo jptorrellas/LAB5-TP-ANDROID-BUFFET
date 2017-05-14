@@ -14,9 +14,9 @@
 
         <!--Titulo-->
         <TextView
-            android:id="@+id/tvTitulo"
+            android:id="@+id/tvTituloLogin"
             android:name="tvTitulo"
-            android:text="@string/tvTitulo"
+            android:text="@string/tvTituloLogin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
@@ -28,8 +28,8 @@
         <!--SubTitulo-->
         <TextView
             android:id="@+id/tvSubTitulo"
-            android:name="tvSubTitulo"
-            android:text="@string/tvSubTitulo"
+            android:name="tvSubTituloLogin"
+            android:text="@string/tvSubTituloLogin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
