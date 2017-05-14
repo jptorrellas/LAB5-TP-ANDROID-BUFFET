@@ -49,17 +49,17 @@ public class LoginCtrl implements Ilogin {
 
                 //Validaciones Form
                 if(!ValidacionesForms.validarInputVacio(email)) {
-                    this.loginView.etEmail.setError("Ingrese email");
+                    this.loginView.etEmail.setError( this.loginView.loginActivity.getResources().getString(R.string.campoVacio) );
                     break;
                 }
 
                 if(!ValidacionesForms.validarInputEmail(email)) {
-                    this.loginView.etEmail.setError("Email inválido");
+                    this.loginView.etEmail.setError( this.loginView.loginActivity.getResources().getString(R.string.emailInvalido) );
                     break;
                 }
 
                 if(!ValidacionesForms.validarInputVacio(clave)) {
-                    this.loginView.etClave.setError("Ingrese clave");
+                    this.loginView.etClave.setError( this.loginView.loginActivity.getResources().getString(R.string.campoVacio) );
                     break;
                 }
 
@@ -80,12 +80,12 @@ public class LoginCtrl implements Ilogin {
     public void ingresar(Usuario usuario) {
 
         if (Usuario.validarUsuario(usuario)) {
-            Toast toast = Toast.makeText(this.loginView.loginActivity, "ENTRO!!! :) email: " + usuario.email + " clave: " + usuario.clave, Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this.loginView.loginActivity, "ENTRO!!! :) email: ", Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
         }
         else {
-            Toast toast = Toast.makeText(this.loginView.loginActivity, "Usuario o email inválido.", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this.loginView.loginActivity, this.loginView.loginActivity.getResources().getString(R.string.emailClaveIncorrecto), Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
         }

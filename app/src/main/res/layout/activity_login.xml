@@ -15,10 +15,12 @@
         <!--Titulo-->
         <TextView
             android:id="@+id/tvTitulo"
+            android:name="tvTitulo"
+            android:text="@string/tvTitulo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:text="Login de Usuario"
+
             android:textColor="@color/colorPrimary"
             android:textSize="30dp"
             android:textAlignment="center" />
@@ -26,7 +28,8 @@
         <!--SubTitulo-->
         <TextView
             android:id="@+id/tvSubTitulo"
-            android:text="Bienvenido a la primera aplicación\n Buffet-UTN"
+            android:name="tvSubTitulo"
+            android:text="@string/tvSubTitulo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
@@ -51,19 +54,21 @@
             <!--tvEmail-->
             <TextView
                 android:id="@+id/tvEmail"
-                android:layout_width="50dp"
+                android:name="tvEmail"
+                android:text="@string/tvEmail"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="Email: "/>
+                android:gravity="right"/>
 
-            <!--etMail-->
+            <!--etEmail-->
             <EditText
                 android:id="@+id/etEmail"
+                android:name="etEmail"
+                android:hint="@string/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
-                android:inputType="textEmailAddress"
-                android:hint="Ingrese su email"/>
+                android:inputType="textEmailAddress"/>
 
         </LinearLayout>
 
@@ -77,18 +82,20 @@
             <!--tvClave-->
             <TextView
                 android:id="@+id/tvClave"
-                android:layout_width="50dp"
+                android:name="tvClave"
+                android:text="@string/tvClave"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="Clave: "/>
+                android:gravity="right"/>
 
             <!--etClave-->
             <EditText
                 android:id="@+id/etClave"
+                android:name="etClave"
+                android:hint="@string/etClave"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
-                android:hint="Ingrese su clave"
                 android:inputType="textPassword" />
 
         </LinearLayout>
@@ -103,14 +110,17 @@
             <!-- chkRecordar-->
             <CheckBox
                 android:id="@+id/chkRecordar"
+                android:name="chkRecordar"
+                android:text="@string/chkRecordarme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Recordar credenciales"/>
+                android:layout_gravity="center" />
 
             <!--btnIngresar-->
             <Button
                 android:id="@+id/btnIngresar"
+                android:name="btnIngresar"
+                android:text="@string/btnIngresar"
                 android:layout_width="180dp"
                 android:layout_height="30dp"
                 android:padding="5dp"
@@ -119,12 +129,13 @@
                 android:background="@color/colorPrimary"
                 android:backgroundTintMode="add"
                 android:textColor="#fff"
-                android:textSize="12dp"
-                android:text="Ingresar"/>
+                android:textSize="12dp"/>
 
             <!--btnRegistrarme-->
             <Button
                 android:id="@+id/btnRegistrarme"
+                android:name="btnRegistrarme"
+                android:text="@string/btnRegistrarme"
                 android:layout_width="180dp"
                 android:layout_height="30dp"
                 android:padding="5dp"
@@ -132,8 +143,7 @@
                 android:layout_gravity="center"
                 android:background="#36a420"
                 android:textColor="#fff"
-                android:textSize="12dp"
-                android:text="Registrarme"/>
+                android:textSize="12dp"/>
 
         </LinearLayout>
 
