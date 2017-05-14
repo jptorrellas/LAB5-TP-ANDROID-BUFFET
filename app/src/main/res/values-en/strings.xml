@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">LAB5-TP-ANDROID-BUFFET</string>
+
+    <!-- LOGIN LAYOUT: EN-->
+    <string name="tvTitulo">Login</string>
+    <string name="tvSubTitulo">Welcome to my first aplication\n Buffet-UTN</string>
+    <string name="tvEmail">Email:</string>
+    <string name="etEmail">Enter your email</string>
+    <string name="tvClave">Password:</string>
+    <string name="etClave">Enter your password</string>
+    <string name="chkRecordarme">Remember credentials</string>
+    <string name="btnIngresar">SIGN IN</string>
+    <string name="btnRegistrarme">SIGN UP</string>
+
+    <!-- Validaciones-->
+    <string name="campoVacio">Empty field!</string>
+    <string name="emailInvalido">Invalid email!</string>
+    <string name="dniInvalido">Invalid DNI!</string>
+    <string name="emailClaveIncorrecto">Invalid email or password!</string>
+
+    <!-- REGISTRO LAYOUT ES: -->
+
+</resources>
