@@ -1,6 +1,9 @@
 package com.example.a55.lab5_tp_android_buffet.Activities.Login.Controller;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
@@ -26,6 +29,8 @@ public class LoginCtrl implements Ilogin {
     public LoginView loginView;
     public LoginListener loginListener;
 
+    SharedPreferences shar;
+
     /**
      * Constructor
      * @param loginView
@@ -37,6 +42,13 @@ public class LoginCtrl implements Ilogin {
 
         this.loginView.btnIngresar.setOnClickListener(loginListener);
         this.loginView.btnRegistrarme.setOnClickListener(loginListener);
+
+        // Levanta SharedPreferences
+         this.shar = PreferenceManager.getDefaultSharedPreferences(this.loginView.loginActivity);
+
+        this.loginView.chkRecordarme.setChecked( this.shar.getBoolean("recordarme", false) );
+        this.loginView.etEmail.setText( this.shar.getString("email", "") );
+        this.loginView.etClave.setText( this.shar.getString("clave", "") );
     }
 
     @Override
@@ -85,6 +97,13 @@ public class LoginCtrl implements Ilogin {
             Toast toast = Toast.makeText(this.loginView.loginActivity, "ENTRO!!!", Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
+
+            if(this.loginView.chkRecordarme.isChecked()) {
+                this.guardarSharedPreferences();
+            }
+            else {
+                this.borrarSharedPreferences();
+            }
         }
         else {
             Toast toast = Toast.makeText(this.loginView.loginActivity, this.loginView.loginActivity.getResources().getString(R.string.emailClaveIncorrecto), Toast.LENGTH_SHORT);
@@ -97,5 +116,25 @@ public class LoginCtrl implements Ilogin {
     public void registrar() {
         Intent intent = new Intent (this.loginView.loginActivity, RegistroUsuarioActivity.class);
         this.loginView.loginActivity.startActivity(intent);
+    }
+
+    public void borrarSharedPreferences() {
+        SharedPreferences.Editor editor = this.shar.edit();
+
+        editor.putBoolean("recordarme", false);
+        editor.putString("email", "");
+        editor.putString("clave", "");
+
+        editor.commit();
+    }
+
+    public void guardarSharedPreferences() {
+        SharedPreferences.Editor editor = this.shar.edit();
+
+        editor.putBoolean("recordarme", true);
+        editor.putString("email", this.loginView.etEmail.getText().toString());
+        editor.putString("clave", this.loginView.etClave.getText().toString());
+
+        editor.commit();
     }
 }

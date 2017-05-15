@@ -2,6 +2,7 @@ package com.example.a55.lab5_tp_android_buffet.Activities.Login.View;
 
 import android.app.Activity;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.a55.lab5_tp_android_buffet.Activities.Login.Model.LoginModel;
@@ -22,6 +23,7 @@ public class LoginView {
 
     public EditText etEmail;
     public EditText etClave;
+    public CheckBox chkRecordarme;
     public Button btnIngresar;
     public Button btnRegistrarme;
 
@@ -37,6 +39,7 @@ public class LoginView {
 
         this.etEmail = (EditText)loginActivity.findViewById(R.id.etEmail);
         this.etClave = (EditText)loginActivity.findViewById(R.id.etClave);
+        this.chkRecordarme = (CheckBox) loginActivity.findViewById(R.id.chkRecordarme);
         this.btnIngresar = (Button)loginActivity.findViewById(R.id.btnIngresar);
         this.btnRegistrarme = (Button)loginActivity.findViewById(R.id.btnRegistrarme);
     }

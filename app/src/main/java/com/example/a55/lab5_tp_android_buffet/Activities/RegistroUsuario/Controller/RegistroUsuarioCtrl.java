@@ -110,9 +110,10 @@ public class RegistroUsuarioCtrl implements IRegistroUsuario {
     public void registrar(Usuario usuario) {
 
         if (Usuario.registrarUsuario(usuario)) {
-            Toast toast = Toast.makeText(this.registroUsuarioView.registroUsuarioActivity, "REGISTRO OK!!! :)", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this.registroUsuarioView.registroUsuarioActivity, "Usuario Registrado! Ya puede acceder con sus credenciales.", Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
+            this.registroUsuarioView.registroUsuarioActivity.finish();
         }
         else {
             Toast toast = Toast.makeText(this.registroUsuarioView.registroUsuarioActivity, this.registroUsuarioView.registroUsuarioActivity.getResources().getString(R.string.usuarioExiste), Toast.LENGTH_SHORT);

@@ -109,8 +109,8 @@
 
             <!-- chkRecordar-->
             <CheckBox
-                android:id="@+id/chkRecordar"
-                android:name="chkRecordar"
+                android:id="@+id/chkRecordarme"
+                android:name="chkRecordarme"
                 android:text="@string/chkRecordarme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
