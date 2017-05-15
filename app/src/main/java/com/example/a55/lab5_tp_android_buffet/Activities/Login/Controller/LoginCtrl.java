@@ -1,5 +1,6 @@
 package com.example.a55.lab5_tp_android_buffet.Activities.Login.Controller;
 
+import android.content.Intent;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
@@ -7,6 +8,7 @@ import android.widget.Toast;
 import com.example.a55.lab5_tp_android_buffet.Activities.Login.Interfaces.Ilogin;
 import com.example.a55.lab5_tp_android_buffet.Activities.Login.Listeners.LoginListener;
 import com.example.a55.lab5_tp_android_buffet.Activities.Login.View.LoginView;
+import com.example.a55.lab5_tp_android_buffet.Activities.RegistroUsuario.RegistroUsuarioActivity;
 import com.example.a55.lab5_tp_android_buffet.POJOS.Usuario;
 import com.example.a55.lab5_tp_android_buffet.R;
 import com.example.a55.lab5_tp_android_buffet.ValidacionesForms.ValidacionesForms;
@@ -80,7 +82,7 @@ public class LoginCtrl implements Ilogin {
     public void ingresar(Usuario usuario) {
 
         if (Usuario.validarUsuario(usuario)) {
-            Toast toast = Toast.makeText(this.loginView.loginActivity, "ENTRO!!! :) email: ", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this.loginView.loginActivity, "ENTRO!!!", Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
         }
@@ -93,6 +95,7 @@ public class LoginCtrl implements Ilogin {
 
     @Override
     public void registrar() {
-        Toast.makeText(this.loginView.loginActivity, "VA A REGISTRO OK!!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent (this.loginView.loginActivity, RegistroUsuarioActivity.class);
+        this.loginView.loginActivity.startActivity(intent);
     }
 }

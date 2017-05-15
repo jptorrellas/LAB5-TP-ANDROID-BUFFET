@@ -17,6 +17,8 @@
     <string name="emailInvalido">Email inválido!</string>
     <string name="dniInvalido">DNI inválido!</string>
     <string name="emailClaveIncorrecto">Email o clave incorrectos!</string>
+    <string name="usuarioExiste">Error: Ya existe un usuario con ese email o DNI</string>
+    <string name="clavesDistintas">Error: Las claves no coinciden</string>
 
     <!-- REGISTRO LAYOUT ES: -->
     <string name="tvTituloRegistro">Registro de Usuario</string>

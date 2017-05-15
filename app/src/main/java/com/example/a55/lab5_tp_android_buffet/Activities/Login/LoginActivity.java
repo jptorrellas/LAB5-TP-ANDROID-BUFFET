@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
         Usuario.listaUsuarios = new ArrayList<Usuario>();
 
-        Usuario u1 = new Usuario("Juan", "Pablo", 20555444, "a@a.com", "123");
+        Usuario u1 = new Usuario("Juan", "Torrellas", 20555444, "a@a.com", "123");
         Usuario.registrarUsuario(u1);
 
         LoginModel loginModel = new LoginModel();

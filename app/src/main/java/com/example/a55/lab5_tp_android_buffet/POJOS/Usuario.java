@@ -49,14 +49,24 @@ public class Usuario {
         return false;
     }
 
+    public static boolean validarEMailODniNoExista(Usuario usuario) {
+
+        for ( Usuario u : Usuario.listaUsuarios) {
+            if ( usuario.email.equals(u.email) || usuario.dni == u.dni ) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static boolean registrarUsuario(Usuario usuario) {
 
-        if (Usuario.validarUsuario(usuario)) {
-            return false;
-        }
-        else {
+        if (Usuario.validarEMailODniNoExista(usuario)) {
             Usuario.listaUsuarios.add(usuario);
             return true;
+        }
+        else {
+            return false;
         }
     }
 
