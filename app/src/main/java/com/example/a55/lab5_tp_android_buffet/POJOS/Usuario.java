@@ -52,7 +52,7 @@ public class Usuario {
     public static boolean validarEMailODniNoExista(Usuario usuario) {
 
         for ( Usuario u : Usuario.listaUsuarios) {
-            if ( usuario.email.equals(u.email) || usuario.dni == u.dni ) {
+            if ( usuario.email.equals(u.email) || usuario.dni.equals(u.dni)  ) {
                 return false;
             }
         }
