@@ -57,9 +57,6 @@ public class LoginActivity extends AppCompatActivity {
         Pedido.cantidadItemsPedido = 0;
 
 
-
-
-
         // SharedPreferences
         SharedPreferences shar = getSharedPreferences("miConfig", Context.MODE_PRIVATE);
 

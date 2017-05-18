@@ -46,4 +46,11 @@ public class Pedido {
         }
         return precioTotal;
     }
+
+    public static void limpiarMiPedido() {
+        cantidadItemsPedido = 0;
+        precioTotalPedido = 0.00;
+        listaPedidos.clear();
+
+    }
 }

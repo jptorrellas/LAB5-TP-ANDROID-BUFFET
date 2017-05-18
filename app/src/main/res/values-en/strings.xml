@@ -40,4 +40,7 @@
     <!-- Item_Producto-->
     <string name="tvPrecioProductoTexto">Price: $</string>
 
+    <!-- MENU SUPERIOR -->
+    <string name="btnMenuDesloguearse">Logout</string>
+
 </resources>

@@ -75,21 +75,4 @@ public class MenuCtrl implements IMenu{
 
     }
 
-    @Override
-    public void desloguear() {
-        this.borrarSharedPreferences();
-
-        Intent intent = new Intent (this.menuView.menuActivity, LoginActivity.class);
-        this.menuView.menuActivity.startActivity(intent);
-    }
-
-    public void borrarSharedPreferences() {
-        SharedPreferences.Editor editor = this.shar.edit();
-
-        editor.putBoolean("recordarme", false);
-        editor.putString("email", "");
-        editor.putString("clave", "");
-
-        editor.commit();
-    }
 }

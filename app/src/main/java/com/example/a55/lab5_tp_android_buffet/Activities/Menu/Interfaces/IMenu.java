@@ -12,5 +12,4 @@ public interface IMenu {
 
     public void operar(View v);
     public void verPedido();
-    public void desloguear();
 }
