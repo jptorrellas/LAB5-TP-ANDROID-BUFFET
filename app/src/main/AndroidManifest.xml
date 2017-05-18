@@ -22,14 +22,12 @@
         <activity
             android:name=".Activities.RegistroUsuario.RegistroUsuarioActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait">
-        </activity>
-
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".Activities.Menu.MenuActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".Activities.MiPedido.MiPedidoActivity"></activity>
     </application>
 
 </manifest>

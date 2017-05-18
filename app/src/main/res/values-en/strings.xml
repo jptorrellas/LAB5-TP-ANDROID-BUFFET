@@ -40,6 +40,10 @@
     <!-- Item_Producto-->
     <string name="tvPrecioProductoTexto">Price: $</string>
 
+    <!-- MI PEDIDO LAYOUT ES: -->
+    <string name="btnConfirmarPedido">confirmar</string>
+
+
     <!-- MENU SUPERIOR -->
     <string name="btnMenuDesloguearse">Logout</string>
 

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a55.lab5_tp_android_buffet.Activities.Login.LoginActivity;
@@ -13,6 +14,8 @@ import com.example.a55.lab5_tp_android_buffet.Activities.Menu.Listeners.MenuList
 import com.example.a55.lab5_tp_android_buffet.Activities.Menu.MenuActivity;
 import com.example.a55.lab5_tp_android_buffet.Activities.Menu.View.MenuView;
 
+import com.example.a55.lab5_tp_android_buffet.Activities.MiPedido.MiPedidoActivity;
+import com.example.a55.lab5_tp_android_buffet.POJOS.Pedido;
 import com.example.a55.lab5_tp_android_buffet.R;
 
 /**
@@ -46,6 +49,14 @@ public class MenuCtrl implements IMenu{
 
     }
 
+    public void actualizarDatos() {
+
+        ( (TextView)this.menuView.menuActivity.findViewById(R.id.tvImporteTotalNumero) ).setText(Pedido.precioTotalPedido.toString());
+
+        ( (TextView)this.menuView.menuActivity.findViewById(R.id.tvCantidadElementosNumero) ).setText(Pedido.cantidadItemsPedido.toString());
+
+    }
+
     @Override
     public void operar(View v) {
 
@@ -69,9 +80,9 @@ public class MenuCtrl implements IMenu{
     @Override
     public void verPedido() {
 
-        Toast.makeText(this.menuView.menuActivity, "UE A VER PEDIDO", Toast.LENGTH_SHORT).show();
-        //Intent intent = new Intent (this.menuView.menuActivity, PedidoActivity.class);
-        //this.menuView.menuActivity.startActivity(intent);
+        //Toast.makeText(this.menuView.menuActivity, "UE A VER PEDIDO", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent (this.menuView.menuActivity, MiPedidoActivity.class);
+        this.menuView.menuActivity.startActivity(intent);
 
     }
 

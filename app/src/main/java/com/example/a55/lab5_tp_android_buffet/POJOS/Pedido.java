@@ -22,8 +22,10 @@ public class Pedido {
         actualizarDatos();
     }
 
-    public static void quitarProductoAPedido(int pIndice) {
+    public static void quitarProductoPedido(int pIndice) {
+
         listaPedidos.remove(pIndice);
+        actualizarDatos();
     }
 
     public static void actualizarDatos() {

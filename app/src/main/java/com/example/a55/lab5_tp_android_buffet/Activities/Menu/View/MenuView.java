@@ -27,7 +27,6 @@ public class MenuView {
 
     public RecyclerView recyclerListaProductos;
     public Button btnVerPedido;
-    public Button btnDesloguearse;
     public TextView tvImporteTotalNumero;
     public TextView tvCantidadElementosNumero;
 
@@ -40,7 +39,6 @@ public class MenuView {
         this.menuModel = menuModel;
 
         this.btnVerPedido = (Button)menuActivity.findViewById(R.id.btnVerPedido);
-        //this.btnDesloguearse = (Button)menuActivity.findViewById(R.id.btnDesloguearse);
         this.tvImporteTotalNumero = (TextView) menuActivity.findViewById(R.id.tvImporteTotalNumero);
         this.tvImporteTotalNumero.setText(Pedido.precioTotalPedido.toString());
         this.tvCantidadElementosNumero = (TextView) menuActivity.findViewById(R.id.tvCantidadElementosNumero);

@@ -1,60 +1,41 @@
-package com.example.a55.lab5_tp_android_buffet.Activities.Menu;
+package com.example.a55.lab5_tp_android_buffet.Activities.MiPedido;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import com.example.a55.lab5_tp_android_buffet.Activities.Login.LoginActivity;
-import com.example.a55.lab5_tp_android_buffet.Activities.Menu.Controller.MenuCtrl;
-import com.example.a55.lab5_tp_android_buffet.Activities.Menu.Model.MenuModel;
-import com.example.a55.lab5_tp_android_buffet.Activities.Menu.RecyclerView.AdapterMenu;
-import com.example.a55.lab5_tp_android_buffet.Activities.Menu.View.MenuView;
+
+import com.example.a55.lab5_tp_android_buffet.Activities.MiPedido.Controller.MiPedidoCtrl;
+import com.example.a55.lab5_tp_android_buffet.Activities.MiPedido.Model.MiPedidoModel;
+import com.example.a55.lab5_tp_android_buffet.Activities.MiPedido.View.MiPedidoView;
 import com.example.a55.lab5_tp_android_buffet.POJOS.Pedido;
-import com.example.a55.lab5_tp_android_buffet.POJOS.Producto;
 import com.example.a55.lab5_tp_android_buffet.R;
 
-public class MenuActivity extends AppCompatActivity {
+public class MiPedidoActivity extends AppCompatActivity {
 
     Menu miMenu;
     SharedPreferences shar;
 
-    MenuModel menuModel;
-    MenuView menuView;
-    MenuCtrl menuCtrl;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_mi_pedido);
 
         //Cambia titulo a  ActionBar
-        getSupportActionBar().setTitle("MENU");
+        getSupportActionBar().setTitle("MI PEDIDO");
 
         // Levanta SharedPreferences
         this.shar = PreferenceManager.getDefaultSharedPreferences(this);
 
         //MVC
-        MenuModel menuModel = new MenuModel();
-        MenuView menuView = new MenuView(this, menuModel);
-        MenuCtrl menuCtrl = new MenuCtrl(menuView);
-
+        MiPedidoModel miPedidoModel = new MiPedidoModel();
+        MiPedidoView miPedidoView = new MiPedidoView(this, miPedidoModel);
+        MiPedidoCtrl miPedidoCtrl = new MiPedidoCtrl(miPedidoView);
     }
 
-   /* @Override
-    protected void onStart() {
-        super.onStart();
-        //this.menuCtrl.actualizarDatos();
-        Toast.makeText(this.menuView.menuActivity, "ON RESTART", Toast.LENGTH_SHORT).show();
-
-    }*/
 
     //Para poner el menu que creamos por xml
     @Override
@@ -91,6 +72,4 @@ public class MenuActivity extends AppCompatActivity {
 
         editor.commit();
     }
-
-
 }
