@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.a55.lab5_tp_android_buffet.Activities.RegistroUsuario.RegistroUsuarioActivity"
-    android:background="#E8E8F0">
+    android:background="#DCDCDC">
 
     <LinearLayout
         android:orientation="vertical"
@@ -229,7 +229,7 @@
                 android:padding="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
-                android:background="#36a420"
+                android:background="@color/colorPrimaryDark"
                 android:textColor="#fff"
                 android:textSize="12dp"/>
 

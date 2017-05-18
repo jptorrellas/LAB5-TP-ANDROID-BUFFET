@@ -1,5 +1,7 @@
 package com.example.a55.lab5_tp_android_buffet.POJOS;
 
+import android.util.Log;
+
 import java.util.List;
 
 /**
@@ -39,7 +41,7 @@ public class Usuario {
     /*
     * Funciones
     */
-    public static boolean validarUsuario(Usuario usuario) {
+    public static boolean validarUsuarioLogin(Usuario usuario) {
 
         for ( Usuario u : Usuario.listaUsuarios) {
             if (usuario.email.equals(u.email) && usuario.clave.equals(u.clave)) {
@@ -49,7 +51,7 @@ public class Usuario {
         return false;
     }
 
-    public static boolean validarEMailODniNoExista(Usuario usuario) {
+    public static boolean validarUsuarioNoExiste(Usuario usuario) {
 
         for ( Usuario u : Usuario.listaUsuarios) {
             if ( usuario.email.equals(u.email) || usuario.dni.equals(u.dni)  ) {
@@ -61,7 +63,7 @@ public class Usuario {
 
     public static boolean registrarUsuario(Usuario usuario) {
 
-        if (Usuario.validarEMailODniNoExista(usuario)) {
+        if (Usuario.validarUsuarioNoExiste(usuario)) {
             Usuario.listaUsuarios.add(usuario);
             return true;
         }

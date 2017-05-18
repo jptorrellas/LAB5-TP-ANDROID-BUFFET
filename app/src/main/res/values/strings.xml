@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">LAB5-TP-ANDROID-BUFFET</string>
 
+    <!-- Validaciones-->
+    <string name="campoVacio">Campo vacío!</string>
+    <string name="emailInvalido">Email inválido!</string>
+    <string name="dniInvalido">DNI inválido!</string>
+    <string name="emailClaveIncorrecto">Email o clave incorrectos!</string>
+    <string name="usuarioExiste">Error: Ya existe un usuario con ese email o DNI</string>
+    <string name="clavesDistintas">Error: Las claves no coinciden</string>
+
     <!-- LOGIN LAYOUT: ES-->
     <string name="tvTituloLogin">Login de Usuario</string>
     <string name="tvSubTituloLogin">Bienvenido a la primera aplicación\n Buffet-UTN</string>
@@ -11,14 +19,6 @@
     <string name="chkRecordarme">Recordar credenciales</string>
     <string name="btnIngresar">INGRESAR</string>
     <string name="btnRegistrarme">REGISTRARME</string>
-
-    <!-- Validaciones-->
-    <string name="campoVacio">Campo vacío!</string>
-    <string name="emailInvalido">Email inválido!</string>
-    <string name="dniInvalido">DNI inválido!</string>
-    <string name="emailClaveIncorrecto">Email o clave incorrectos!</string>
-    <string name="usuarioExiste">Error: Ya existe un usuario con ese email o DNI</string>
-    <string name="clavesDistintas">Error: Las claves no coinciden</string>
 
     <!-- REGISTRO LAYOUT ES: -->
     <string name="tvTituloRegistro">Registro de Usuario</string>
@@ -31,4 +31,13 @@
     <string name="etDNI">Ingrese su DNI</string>
     <string name="tvReingreseClave">Reingrese:</string>
     <string name="etReingreseClave">Reingrese su clave</string>
+
+    <!-- MENU LAYOUT ES: -->
+    <string name="tvImporteTotalTexto">PRECIO TOTAL: $</string>
+    <string name="tvCantidadElementosTexto">Elementos seleccionados: </string>
+    <string name="btnVerPedido">ver pedido</string>
+
+    <!-- Item_Producto-->
+    <string name="tvPrecioProductoTexto">Precio: $</string>
+
 </resources>

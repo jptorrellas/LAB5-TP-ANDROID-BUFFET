@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">LAB5-TP-ANDROID-BUFFET</string>
 
+    <!-- Validaciones-->
+    <string name="campoVacio">Empty field!</string>
+    <string name="emailInvalido">Invalid email!</string>
+    <string name="dniInvalido">Invalid DNI!</string>
+    <string name="emailClaveIncorrecto">Invalid email or password!</string>
+    <string name="usuarioExiste">Error: Alredy exist an user with this email or DNI</string>
+    <string name="clavesDistintas">Error: The passwords dont equals</string>
+
     <!-- LOGIN LAYOUT: EN-->
     <string name="tvTituloLogin">Login</string>
     <string name="tvSubTituloLogin">Welcome to my first aplication\n Buffet-UTN</string>
@@ -11,14 +19,6 @@
     <string name="chkRecordarme">Remember credentials</string>
     <string name="btnIngresar">LOG IN</string>
     <string name="btnRegistrarme">SIGN UP</string>
-
-    <!-- Validaciones-->
-    <string name="campoVacio">Empty field!</string>
-    <string name="emailInvalido">Invalid email!</string>
-    <string name="dniInvalido">Invalid DNI!</string>
-    <string name="emailClaveIncorrecto">Invalid email or password!</string>
-    <string name="usuarioExiste">Error: Alredy exist an user with this email or DNI</string>
-    <string name="clavesDistintas">Error: The passwords dont equals</string>
 
     <!-- REGISTRO LAYOUT ES: -->
     <string name="tvTituloRegistro">Sign Up</string>
@@ -31,5 +31,13 @@
     <string name="etDNI">Enter your DNI</string>
     <string name="tvReingreseClave">Re-enter:</string>
     <string name="etReingreseClave">Re-enter your password</string>
+
+    <!-- MENU LAYOUT ES: -->
+    <string name="tvImporteTotalTexto">TOTAL PRICE: $</string>
+    <string name="tvCantidadElementosTexto">Selected items: </string>
+    <string name="btnVerPedido">view order</string>
+
+    <!-- Item_Producto-->
+    <string name="tvPrecioProductoTexto">Price: $</string>
 
 </resources>

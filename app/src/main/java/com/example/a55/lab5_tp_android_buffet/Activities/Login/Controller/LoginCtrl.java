@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.example.a55.lab5_tp_android_buffet.Activities.Login.Interfaces.Ilogin;
 import com.example.a55.lab5_tp_android_buffet.Activities.Login.Listeners.LoginListener;
 import com.example.a55.lab5_tp_android_buffet.Activities.Login.View.LoginView;
+import com.example.a55.lab5_tp_android_buffet.Activities.Menu.MenuActivity;
 import com.example.a55.lab5_tp_android_buffet.Activities.RegistroUsuario.RegistroUsuarioActivity;
 import com.example.a55.lab5_tp_android_buffet.POJOS.Usuario;
 import com.example.a55.lab5_tp_android_buffet.R;
@@ -93,7 +94,7 @@ public class LoginCtrl implements Ilogin {
     @Override
     public void ingresar(Usuario usuario) {
 
-        if (Usuario.validarUsuario(usuario)) {
+        if (Usuario.validarUsuarioLogin(usuario)) {
             Toast toast = Toast.makeText(this.loginView.loginActivity, "ENTRO!!!", Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
@@ -104,6 +105,8 @@ public class LoginCtrl implements Ilogin {
             else {
                 this.borrarSharedPreferences();
             }
+            Intent intent = new Intent (this.loginView.loginActivity, MenuActivity.class);
+            this.loginView.loginActivity.startActivity(intent);
         }
         else {
             Toast toast = Toast.makeText(this.loginView.loginActivity, this.loginView.loginActivity.getResources().getString(R.string.emailClaveIncorrecto), Toast.LENGTH_SHORT);

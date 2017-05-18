@@ -6,6 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+<!--
+        <item name="colorAzul">@color/colorAzul</item>
+        <item name="colorVerde">@color/colorVerde</item>
+        <item name="colorGris">@color/colorGris</item>-->
     </style>
 
 </resources>
