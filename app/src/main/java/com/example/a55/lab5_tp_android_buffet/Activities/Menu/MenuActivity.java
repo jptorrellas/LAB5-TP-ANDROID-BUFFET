@@ -50,7 +50,7 @@ public class MenuActivity extends AppCompatActivity {
 
    /* @Override
     protected void onStart() {
-        super.onStart();
+        super.onStart(+);
         //this.menuCtrl.actualizarDatos();
         Toast.makeText(this.menuView.menuActivity, "ON RESTART", Toast.LENGTH_SHORT).show();
 
