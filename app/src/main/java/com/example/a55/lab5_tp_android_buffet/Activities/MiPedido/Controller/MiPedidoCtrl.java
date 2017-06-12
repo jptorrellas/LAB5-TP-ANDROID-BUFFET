@@ -1,10 +1,12 @@
 package com.example.a55.lab5_tp_android_buffet.Activities.MiPedido.Controller;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.a55.lab5_tp_android_buffet.Activities.Login.LoginActivity;
 import com.example.a55.lab5_tp_android_buffet.Activities.Menu.Listeners.MenuListener;
 import com.example.a55.lab5_tp_android_buffet.Activities.Menu.View.MenuView;
 import com.example.a55.lab5_tp_android_buffet.Activities.MiPedido.Interfaces.IMiPedido;
@@ -60,10 +62,41 @@ public class MiPedidoCtrl implements IMiPedido {
 
     @Override
     public void confirmarPedido() {
+        if (Pedido.cantidadItemsPedido == 0) {
+            Toast.makeText(this.miPedidoView.miPedidoActivity, R.string.pedidoVacio, Toast.LENGTH_SHORT).show();
+        }
+        else {
+            this.limpiarPedido();
+            Toast.makeText(this.miPedidoView.miPedidoActivity, R.string.pedidoVacio, Toast.LENGTH_SHORT).show();
+        }
 
-        Toast.makeText(this.miPedidoView.miPedidoActivity, "PEDIDO REALIZADO!!!", Toast.LENGTH_SHORT).show();
+    }
+
+    public void limpiarPedido() {
+        Pedido.limpiarMiPedido();
 
         Pedido.limpiarMiPedido();
         this.miPedidoView.miPedidoActivity.finish();
+    }
+
+    public void desloguear() {
+        this.borrarSharedPreferences();
+
+        Pedido.limpiarMiPedido();
+
+        Intent intent = new Intent (this.miPedidoView.miPedidoActivity, LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        this.miPedidoView.miPedidoActivity.startActivity(intent);
+
+        this.miPedidoView.miPedidoActivity.finish();
+    }
+
+    public void borrarSharedPreferences() {
+        SharedPreferences.Editor editor = this.shar.edit();
+
+        editor.putBoolean("recordarme", false);
+        editor.putString("email", "");
+        editor.putString("clave", "");
+
+        editor.commit();
     }
 }

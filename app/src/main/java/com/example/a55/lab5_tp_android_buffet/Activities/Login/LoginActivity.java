@@ -56,22 +56,6 @@ public class LoginActivity extends AppCompatActivity {
         Pedido.precioTotalPedido= 0.00;
         Pedido.cantidadItemsPedido = 0;
 
-
-        // SharedPreferences
-        SharedPreferences shar = getSharedPreferences("miConfig", Context.MODE_PRIVATE);
-
-        // Para editar el Shar
-        if (!(shar.contains("recordarme")) || !(shar.contains("email")) || !(shar.contains("clave")) ) {
-
-            SharedPreferences.Editor editor = shar.edit();
-
-            editor.putBoolean("recordarme", true);
-            editor.putString("email", "");
-            editor.putString("clave", "");
-            editor.commit();
-        }
-
-
         // MVC
         LoginModel loginModel = new LoginModel();
         LoginView loginView = new LoginView(this, loginModel);

@@ -24,8 +24,6 @@ import com.example.a55.lab5_tp_android_buffet.R;
 public class MenuActivity extends AppCompatActivity {
 
     Menu miMenu;
-    SharedPreferences shar;
-
     MenuModel menuModel;
     MenuView menuView;
     MenuCtrl menuCtrl;
@@ -38,23 +36,17 @@ public class MenuActivity extends AppCompatActivity {
         //Cambia titulo a  ActionBar
         getSupportActionBar().setTitle("MENU");
 
-        // Levanta SharedPreferences
-        this.shar = PreferenceManager.getDefaultSharedPreferences(this);
-
         //MVC
-        MenuModel menuModel = new MenuModel();
-        MenuView menuView = new MenuView(this, menuModel);
-        MenuCtrl menuCtrl = new MenuCtrl(menuView);
-
+        menuModel = new MenuModel();
+        menuView = new MenuView(this, menuModel);
+        menuCtrl = new MenuCtrl(menuView);
     }
 
-   /* @Override
-    protected void onStart() {
-        super.onStart(+);
-        //this.menuCtrl.actualizarDatos();
-        Toast.makeText(this.menuView.menuActivity, "ON RESTART", Toast.LENGTH_SHORT).show();
-
-    }*/
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.menuCtrl.actualizarDatos();
+    }
 
     //Para poner el menu que creamos por xml
     @Override
@@ -70,27 +62,12 @@ public class MenuActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (item.getItemId() == R.id.btnMenuDesloguearse) {
-            this.desloguear();
+            menuCtrl.desloguear();
+        }
+
+        if (item.getItemId() == R.id.btnVerPedidoActual) {
+            menuCtrl.verPedido();
         }
         return super.onOptionsItemSelected(item);
     }
-
-    public void desloguear() {
-        this.borrarSharedPreferences();
-
-        Pedido.limpiarMiPedido();
-        this.finish();
-    }
-
-    public void borrarSharedPreferences() {
-        SharedPreferences.Editor editor = this.shar.edit();
-
-        editor.putBoolean("recordarme", false);
-        editor.putString("email", "");
-        editor.putString("clave", "");
-
-        editor.commit();
-    }
-
-
 }

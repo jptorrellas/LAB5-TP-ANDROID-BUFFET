@@ -42,7 +42,6 @@ public class MenuCtrl implements IMenu{
         this.menuListener = new MenuListener(this);
 
         this.menuView.btnVerPedido.setOnClickListener(menuListener);
-        //this.menuView.btnDesloguearse.setOnClickListener(menuListener);
 
         // Levanta SharedPreferences
         this.shar = PreferenceManager.getDefaultSharedPreferences(this.menuView.menuActivity);
@@ -67,10 +66,6 @@ public class MenuCtrl implements IMenu{
                 this.verPedido();
                 break;
 
-            /*case R.id.btnDesloguearse:
-                this.desloguear();
-                break;*/
-
             default:
                 Toast.makeText(this.menuView.menuActivity, "SWITCH DEFAULT", Toast.LENGTH_SHORT).show();
                 break;
@@ -84,6 +79,27 @@ public class MenuCtrl implements IMenu{
         Intent intent = new Intent (this.menuView.menuActivity, MiPedidoActivity.class);
         this.menuView.menuActivity.startActivity(intent);
 
+    }
+
+    public void desloguear() {
+        this.borrarSharedPreferences();
+
+        Pedido.limpiarMiPedido();
+
+        Intent intent = new Intent (this.menuView.menuActivity, LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        this.menuView.menuActivity.startActivity(intent);
+
+        this.menuView.menuActivity.finish();
+    }
+
+    public void borrarSharedPreferences() {
+        SharedPreferences.Editor editor = this.shar.edit();
+
+        editor.putBoolean("recordarme", false);
+        editor.putString("email", "");
+        editor.putString("clave", "");
+
+        editor.commit();
     }
 
 }

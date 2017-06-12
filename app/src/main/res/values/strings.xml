@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">LAB5-TP-ANDROID-BUFFET</string>
 
+    <!-- Toast -->
+    <string name="pedidoEnviado">Su pedido fue enviado con éxito!</string>
+    <string name="pedidoVacio">NO SE PUEDE ENVIAR UN PEDIDO VACIO :(</string>
+
     <!-- Validaciones-->
     <string name="campoVacio">Campo vacío!</string>
     <string name="emailInvalido">Email inválido!</string>
@@ -35,15 +39,20 @@
     <!-- MENU LAYOUT ES: -->
     <string name="tvImporteTotalTexto">PRECIO TOTAL: $</string>
     <string name="tvCantidadElementosTexto">Elementos seleccionados: </string>
-    <string name="btnVerPedido">ver pedido</string>
+    <string name="btnVerPedido">enviar pedido</string>
 
     <!-- Item_Producto-->
     <string name="tvPrecioProductoTexto">Precio: $</string>
 
     <!-- MI PEDIDO LAYOUT ES: -->
-    <string name="btnConfirmarPedido">confirm</string>
+    <string name="btnConfirmarPedido">confirmar</string>
 
     <!-- MENU SUPERIOR -->
     <string name="btnMenuDesloguearse">Desloguearse</string>
+    <string name="btnVerPedidoActual">Ver pedido actual</string>
+
+    <!-- MI PEDIDO SUPERIOR -->
+    <string name="btnConfirmarPedidoActual">Confirmar pedido actual</string>
+    <string name="btnLimpiarPedido">Limpiar pedido</string>
 
 </resources>

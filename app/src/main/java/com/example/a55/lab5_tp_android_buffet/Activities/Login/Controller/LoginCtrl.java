@@ -1,5 +1,6 @@
 package com.example.a55.lab5_tp_android_buffet.Activities.Login.Controller;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -30,7 +31,8 @@ public class LoginCtrl implements Ilogin {
     public LoginView loginView;
     public LoginListener loginListener;
 
-    SharedPreferences shar;
+    public SharedPreferences sharSetea;
+    public SharedPreferences shar;
 
     /**
      * Constructor
@@ -44,12 +46,35 @@ public class LoginCtrl implements Ilogin {
         this.loginView.btnIngresar.setOnClickListener(loginListener);
         this.loginView.btnRegistrarme.setOnClickListener(loginListener);
 
-        // Levanta SharedPreferences
-         this.shar = PreferenceManager.getDefaultSharedPreferences(this.loginView.loginActivity);
+        // Setea SharedPreferences
+        this.sharSetea = loginView.loginActivity.getSharedPreferences("miConfig", Context.MODE_PRIVATE);
 
+        // Para editar el Shar
+        if (!(sharSetea.contains("recordarme")) || !(sharSetea.contains("email")) || !(sharSetea.contains("clave")) ) {
+
+            SharedPreferences.Editor editor = sharSetea.edit();
+
+            editor.putBoolean("recordarme", true);
+            editor.putString("email", "");
+            editor.putString("clave", "");
+            editor.commit();
+        }
+
+        // Levanta SharedPreferences (reemplazado por inicio automatico - mas abajo)
+        /*
+        this.shar = PreferenceManager.getDefaultSharedPreferences(this.loginView.loginActivity);
         this.loginView.chkRecordarme.setChecked( this.shar.getBoolean("recordarme", false) );
         this.loginView.etEmail.setText( this.shar.getString("email", "") );
         this.loginView.etClave.setText( this.shar.getString("clave", "") );
+        */
+        this.shar = PreferenceManager.getDefaultSharedPreferences(this.loginView.loginActivity);
+        Boolean recordarme = this.shar.getBoolean("recordarme", false);
+        if (recordarme) {
+            Intent intent = new Intent (this.loginView.loginActivity, MenuActivity.class);
+            this.loginView.loginActivity.startActivity(intent);
+        }
+
+
     }
 
     @Override

@@ -17,7 +17,9 @@ import com.example.a55.lab5_tp_android_buffet.R;
 public class MiPedidoActivity extends AppCompatActivity {
 
     Menu miMenu;
-    SharedPreferences shar;
+    MiPedidoModel miPedidoModel;
+    MiPedidoView miPedidoView;
+    MiPedidoCtrl miPedidoCtrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,20 +29,17 @@ public class MiPedidoActivity extends AppCompatActivity {
         //Cambia titulo a  ActionBar
         getSupportActionBar().setTitle("MI PEDIDO");
 
-        // Levanta SharedPreferences
-        this.shar = PreferenceManager.getDefaultSharedPreferences(this);
-
         //MVC
-        MiPedidoModel miPedidoModel = new MiPedidoModel();
-        MiPedidoView miPedidoView = new MiPedidoView(this, miPedidoModel);
-        MiPedidoCtrl miPedidoCtrl = new MiPedidoCtrl(miPedidoView);
+        miPedidoModel = new MiPedidoModel();
+        miPedidoView = new MiPedidoView(this, miPedidoModel);
+        miPedidoCtrl = new MiPedidoCtrl(miPedidoView);
     }
 
 
     //Para poner el menu que creamos por xml
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menusuperior, menu);
+        getMenuInflater().inflate(R.menu.mipedidosuperior, menu);
         this.miMenu = menu;
 
         return true;
@@ -51,25 +50,19 @@ public class MiPedidoActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (item.getItemId() == R.id.btnMenuDesloguearse) {
-            this.desloguear();
+            miPedidoCtrl.desloguear();
         }
+
+        if (item.getItemId() == R.id.btnConfirmarPedidoActual) {
+            miPedidoCtrl.confirmarPedido();
+        }
+
+        if (item.getItemId() == R.id.btnLimpiarPedido) {
+            miPedidoCtrl.limpiarPedido();
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
-    public void desloguear() {
-        this.borrarSharedPreferences();
 
-        Pedido.limpiarMiPedido();
-        this.finish();
-    }
-
-    public void borrarSharedPreferences() {
-        SharedPreferences.Editor editor = this.shar.edit();
-
-        editor.putBoolean("recordarme", false);
-        editor.putString("email", "");
-        editor.putString("clave", "");
-
-        editor.commit();
-    }
 }
